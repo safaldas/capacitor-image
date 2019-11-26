@@ -1,0 +1,13 @@
+{
+  "name": "capacitor-test-project",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "author": "safaldas <safaldas.g@neoito.com>",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "^1.3.0",
+    "@capacitor/cli": "^1.0.0",
+    "@capacitor/core": "^1.0.0",
+    "@capacitor/ios": "^1.3.0"
+  }
+}
