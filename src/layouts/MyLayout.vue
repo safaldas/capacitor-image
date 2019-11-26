@@ -57,7 +57,8 @@ export default {
         path: fileName
       })
 
-      this.photoPath = Capacitor.convertFileSrc(finalPhotoUri.uri)
+      // this.photoPath = Capacitor.convertFileSrc(finalPhotoUri.uri)
+      this.photoPath = 'data:image/jpeg;base64,' + photoInTempStorage.data
       console.log(this.photoPath)
       // Capacitor.convertFileSrc(finalPhotoUri.uri)
     }
