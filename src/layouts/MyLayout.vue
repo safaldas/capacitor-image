@@ -38,26 +38,26 @@ export default {
       }
 
       const originalPhoto = await Camera.getPhoto(options)
-      // const photoInTempStorage = await Filesystem.readFile({
-      //   path: originalPhoto.path
-      // })
+      const photoInTempStorage = await Filesystem.readFile({
+        path: originalPhoto.path
+      })
 
       let date = new Date(),
         time = date.getTime(),
         fileName = time + '.jpeg'
 
-      // await Filesystem.writeFile({
-      //   data: photoInTempStorage.data,
-      //   path: fileName,
-      //   directory: FilesystemDirectory.Data
-      // })
+      await Filesystem.writeFile({
+        data: photoInTempStorage.data,
+        path: fileName,
+        directory: FilesystemDirectory.Data
+      })
 
-      // const finalPhotoUri = await Filesystem.getUri({
-      //   directory: FilesystemDirectory.Data,
-      //   path: fileName
-      // })
+      const finalPhotoUri = await Filesystem.getUri({
+        directory: FilesystemDirectory.Data,
+        path: fileName
+      })
 
-      this.photoPath = Capacitor.convertFileSrc(originalPhoto.path)
+      this.photoPath = Capacitor.convertFileSrc(finalPhotoUri.uri)
       console.log(this.photoPath)
       // Capacitor.convertFileSrc(finalPhotoUri.uri)
     }
